@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website học sinh trường THPT Duy Tân – Chia sẻ bài viết về di sản và bảo vệ môi trường Quảng Nam">
+<title>Tuổi Trẻ Duy Tân – Di Sản & Môi Trường Xanh</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════ -->
+<header id="header">
+  <a class="logo" href="#" onclick="APP.showPage('home')">
+    <div class="logo-icon">🌿</div>
+    <div>
+      <div class="logo-name">TUỔI TRẺ DUY TÂN</div>
+      <div class="logo-sub">Di sản &amp; Môi trường xanh</div>
+    </div>
+  </a>
+
+  <nav id="main-nav">
+    <a href="#hero"        data-section="hero">Trang chủ</a>
+    <a href="#di-san"      data-section="di-san">Di sản quê em</a>
+    <a href="#moi-truong"  data-section="moi-truong">Môi trường</a>
+    <a href="#bai-viet"    data-section="bai-viet">Bài viết HS</a>
+    <a href="#thu-vien"    data-section="thu-vien">Thư viện ảnh</a>
+    <a href="#hoat-dong"   data-section="hoat-dong">Hoạt động</a>
+    <a href="#" data-page="ranking">🏆 Xếp hạng</a>
+  </nav>
+
+  <div id="header-right" class="header-right">
+    <!-- Rendered by app.js -->
+  </div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     VIRTUAL PAGES (SPA router target)
+════════════════════════════════════════════ -->
+<div id="virtual-pages"></div>
+
+<!-- ═══════════════════════════════════════════
+     HOME CONTENT
+════════════════════════════════════════════ -->
+<div id="home-content">
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-bg-effects"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">🌟 Trường THPT Duy Tân – Quảng Nam</div>
+      <h1 class="hero-title">
+        Tuổi trẻ hành động<br>
+        vì <span class="accent">di sản xanh</span>
+      </h1>
+      <p class="hero-subtitle">
+        Mỗi bài viết – một hành động đẹp cho quê hương<br>
+        Giữ gìn di sản hôm nay – bảo vệ tương lai mai sau
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-lg btn-primary" onclick="APP.openPostModal()">
+          ✏️ Đăng bài ngay
+        </button>
+        <button class="btn btn-lg" style="background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.4);color:#fff;border-radius:50px"
+          onclick="document.getElementById('di-san').scrollIntoView({behavior:'smooth'})">
+          🏛️ Khám phá di sản
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-stat-bar">
+      <div class="hero-stat">
+        <div class="stat-num" id="stat-trees">0</div>
+        <div class="stat-lbl">🌱 Cây đã trồng</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num" id="stat-posts">0</div>
+        <div class="stat-lbl">✏️ Bài viết xanh</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num" id="stat-heritage">0</div>
+        <div class="stat-lbl">🏛️ Di sản giới thiệu</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-num" id="stat-members">0</div>
+        <div class="stat-lbl">👦 Thành viên tích cực</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DI SẢN NỔI BẬT ── -->
+  <section id="di-san">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">🏛️ Di sản quê em</div>
+        <h2 class="section-title">Di sản nổi bật của Quảng Nam</h2>
+        <p class="section-sub">Khám phá vẻ đẹp văn hóa và thiên nhiên quê hương qua góc nhìn học sinh trường Duy Tân</p>
+      </div>
+      <div class="heritage-grid" id="heritage-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MÔI TRƯỜNG XANH ── -->
+  <section id="moi-truong">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">🌿 Môi trường xanh</div>
+        <h2 class="section-title">Chung tay bảo vệ môi trường</h2>
+        <p class="section-sub">Những hành động nhỏ hôm nay sẽ tạo ra sự khác biệt lớn cho tương lai xanh</p>
+      </div>
+      <div class="env-grid">
+        <div class="env-card env-1 reveal">
+          <div class="env-icon">♻️</div>
+          <div class="env-title">Giảm rác thải nhựa</div>
+          <div class="env-slogan">"Một chiếc túi vải hôm nay – thêm màu xanh ngày mai"</div>
+          <button class="btn btn-outline btn-sm" style="margin-top:18px" onclick="APP.openPostModal()">Chia sẻ hành động của bạn</button>
+        </div>
+        <div class="env-card env-2 reveal">
+          <div class="env-icon">🌱</div>
+          <div class="env-title">Trồng cây xanh</div>
+          <div class="env-slogan">"Mỗi cây xanh là một lá phổi nhỏ cho Trái Đất"</div>
+          <button class="btn btn-outline btn-sm" style="margin-top:18px" onclick="document.getElementById('hoat-dong').scrollIntoView({behavior:'smooth'})">Tham gia trồng cây</button>
+        </div>
+        <div class="env-card env-3 reveal">
+          <div class="env-icon">🌊</div>
+          <div class="env-title">Làm sạch biển</div>
+          <div class="env-slogan">"Biển sạch hôm nay – cá tôm ngày mai"</div>
+          <button class="btn btn-outline btn-sm" style="margin-top:18px" onclick="document.getElementById('hoat-dong').scrollIntoView({behavior:'smooth'})">Xem hoạt động</button>
+        </div>
+      </div>
+
+      <!-- Challenge strip -->
+      <div class="env-challenge reveal">
+        <div class="env-challenge-text">
+          <div class="env-challenge-tag">⭐ Thử thách nổi bật</div>
+          <div class="env-challenge-title">🌿 Thử thách 7 ngày sống xanh</div>
+          <div class="env-challenge-sub">Mỗi tuần một hành động xanh – cùng nhau tạo ra sự thay đổi! Đăng ký và nhận điểm thưởng.</div>
+        </div>
+        <button class="btn btn-lg" style="background:linear-gradient(135deg,var(--green-light),var(--yellow));color:#fff;border:none;flex-shrink:0"
+          onclick="APP.joinChallenge ? APP.joinChallenge() : APP.openPostModal()">
+          Tham gia ngay!
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BÀI VIẾT HỌC SINH ── -->
+  <section id="bai-viet">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">✏️ Góc học sinh</div>
+        <h2 class="section-title">Bài viết của học sinh</h2>
+        <p class="section-sub">Những câu chuyện, cảm nhận và hành động xanh của các bạn học sinh trường Duy Tân</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:36px" id="cat-filter-bar">
+        <button class="btn btn-primary btn-sm cat-tab" data-cat="" onclick="filterHome(this,'')">Tất cả</button>
+        <button class="btn btn-outline btn-sm cat-tab" data-cat="di-san" onclick="filterHome(this,'di-san')">🏛️ Di sản</button>
+        <button class="btn btn-outline btn-sm cat-tab" data-cat="moi-truong" onclick="filterHome(this,'moi-truong')">🌿 Môi trường</button>
+        <button class="btn btn-outline btn-sm cat-tab" data-cat="kien-thuc" onclick="filterHome(this,'kien-thuc')">💡 Kiến thức</button>
+        <button class="btn btn-outline btn-sm cat-tab" data-cat="hoat-dong" onclick="filterHome(this,'hoat-dong')">🎯 Hoạt động</button>
+      </div>
+
+      <div class="posts-grid" id="posts-grid">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <div class="posts-more">
+        <button class="btn btn-primary" onclick="APP.showPage('posts-all')" style="padding:14px 36px;border-radius:50px;font-size:15px">
+          Xem tất cả bài viết →
+        </button>
+        <button class="btn btn-outline" style="margin-left:12px;padding:14px 36px;border-radius:50px;font-size:15px" onclick="APP.openPostModal()">
+          ✏️ Đăng bài của bạn
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THƯ VIỆN ẢNH ── -->
+  <section id="thu-vien">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">📸 Thư viện</div>
+        <h2 class="section-title">Thư viện ảnh &amp; hoạt động</h2>
+        <p class="section-sub">Những khoảnh khắc đẹp về bảo vệ môi trường và di sản quê hương</p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item wide">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg,#a8e6c5,#50c48a)">🌊</div>
+          <div class="gallery-caption"><span class="gallery-caption-text">Chiến dịch làm sạch biển Tam Thanh – 5/2025</span></div>
+        </div>
+        <div class="gallery-item tall">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg,#f5d08a,#c87420)">🏮</div>
+          <div class="gallery-caption"><span class="gallery-caption-text">Phố cổ Hội An về đêm lung linh</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg,#8fba70,#3a6820)">🛕</div>
+          <div class="gallery-caption"><span class="gallery-caption-text">Thánh địa Mỹ Sơn huyền bí</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg,#f0c5e5,#d060a0)">🌸</div>
+          <div class="gallery-caption"><span class="gallery-caption-text">Lễ hội truyền thống Quảng Nam</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg,#c5e0a8,#5a9440)">🌿</div>
+          <div class="gallery-caption"><span class="gallery-caption-text">Học sinh trồng cây xanh sân trường</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-inner" style="background:linear-gradient(135deg,#a8d4f5,#1860c0)">🎨</div>
+          <div class="gallery-caption"><span class="gallery-caption-text">Làng bích họa Tam Thanh đầy màu sắc</span></div>
+        </div>
+      </div>
+
+      <!-- Upload gallery prompt -->
+      <div style="text-align:center;margin-top:40px" class="reveal">
+        <p style="color:#777;margin-bottom:16px;font-size:15px">Bạn có ảnh đẹp muốn chia sẻ? Đăng bài viết kèm ảnh nhé!</p>
+        <button class="btn btn-primary" onclick="APP.openPostModal()">📸 Chia sẻ ảnh của bạn</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOẠT ĐỘNG & SỰ KIỆN ── -->
+  <section id="hoat-dong">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">📅 Sự kiện</div>
+        <h2 class="section-title">Hoạt động &amp; Sự kiện</h2>
+        <p class="section-sub">Tham gia các hoạt động ý nghĩa cùng tuổi trẻ Duy Tân!</p>
+      </div>
+      <div class="timeline" id="timeline">
+        <!-- Rendered by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GÓC KIẾN THỨC ── -->
+  <section id="kien-thuc">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">💡 Kiến thức</div>
+        <h2 class="section-title">Góc kiến thức &amp; Thông điệp</h2>
+        <p class="section-sub">Tìm hiểu thông tin bổ ích về di sản và bảo vệ môi trường</p>
+      </div>
+      <div class="knowledge-grid">
+        <div class="knowledge-card reveal" onclick="APP.openPostModal()">
+          <div class="k-icon">🏛️</div>
+          <div class="k-title">Di sản văn hóa là gì?</div>
+          <div class="k-desc">Tìm hiểu về khái niệm di sản văn hóa vật thể và phi vật thể, tầm quan trọng của việc bảo tồn.</div>
+          <div style="margin-top:14px"><span class="badge badge-green">Cơ bản</span></div>
+        </div>
+        <div class="knowledge-card reveal" onclick="APP.openPostModal()">
+          <div class="k-icon">🌡️</div>
+          <div class="k-title">Biến đổi khí hậu ảnh hưởng thế nào?</div>
+          <div class="k-desc">Hiểu rõ tác động của biến đổi khí hậu đến môi trường sống và các di sản thiên nhiên Việt Nam.</div>
+          <div style="margin-top:14px"><span class="badge badge-blue">Khoa học</span></div>
+        </div>
+        <div class="knowledge-card reveal" onclick="APP.openPostModal()">
+          <div class="k-icon">♻️</div>
+          <div class="k-title">5 cách bảo vệ môi trường học sinh có thể làm</div>
+          <div class="k-desc">Những hành động thiết thực mà mỗi học sinh có thể thực hiện ngay hôm nay để bảo vệ môi trường.</div>
+          <div style="margin-top:14px"><span class="badge badge-green">Thực hành</span></div>
+        </div>
+        <div class="knowledge-card reveal" onclick="APP.openPostModal()">
+          <div class="k-icon">🐋</div>
+          <div class="k-title">Tác hại của rác thải nhựa với đại dương</div>
+          <div class="k-desc">Rác thải nhựa đang hủy hoại đại dương và sinh vật biển như thế nào? Chúng ta có thể làm gì?</div>
+          <div style="margin-top:14px"><span class="badge badge-blue">Môi trường</span></div>
+        </div>
+        <div class="knowledge-card reveal" onclick="APP.openPostModal()">
+          <div class="k-icon">🎭</div>
+          <div class="k-title">Nghệ thuật Bài Chòi Trung Bộ</div>
+          <div class="k-desc">Di sản văn hóa phi vật thể của Quảng Nam được UNESCO công nhận – nghệ thuật dân gian độc đáo.</div>
+          <div style="margin-top:14px"><span class="badge badge-yellow">Di sản</span></div>
+        </div>
+        <div class="knowledge-card reveal" onclick="APP.openPostModal()">
+          <div class="k-icon">🌿</div>
+          <div class="k-title">Sống xanh mỗi ngày</div>
+          <div class="k-desc">Thói quen nhỏ hàng ngày tạo tác động lớn: tiết kiệm điện, nước, phân loại rác đúng cách.</div>
+          <div style="margin-top:14px"><span class="badge badge-green">Lối sống</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BANNER CTA ── -->
+  <section style="padding:80px 48px;background:linear-gradient(160deg,var(--green-dark),var(--blue));color:#fff;text-align:center">
+    <div class="container">
+      <div class="reveal">
+        <div style="font-size:56px;margin-bottom:20px">🌏</div>
+        <h2 style="font-family:Montserrat,sans-serif;font-weight:900;font-size:clamp(26px,4vw,40px);margin-bottom:16px">
+          Cùng nhau xây dựng trường học xanh!
+        </h2>
+        <p style="font-size:17px;opacity:.85;max-width:560px;margin:0 auto 36px;line-height:1.75">
+          Đăng ký tài khoản, chia sẻ bài viết, tham gia hoạt động và tích lũy điểm Đại sứ Xanh ngay hôm nay!
+        </p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-lg" style="background:var(--yellow);color:#333;border:none;font-weight:900" onclick="APP.openRegisterModal()">
+            🌱 Đăng ký miễn phí
+          </button>
+          <button class="btn btn-lg" style="background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4);color:#fff;border-radius:50px" onclick="APP.openPostModal()">
+            ✏️ Đăng bài ngay
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+            <div style="width:42px;height:42px;background:linear-gradient(135deg,var(--green-light),var(--blue-light));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px">🌿</div>
+            <div>
+              <div style="font-family:Montserrat,sans-serif;font-weight:900;font-size:14px">TUỔI TRẺ DUY TÂN</div>
+              <div style="font-size:11px;opacity:.55">Di sản &amp; Môi trường xanh</div>
+            </div>
+          </div>
+          <p>Website chia sẻ bài viết của học sinh trường THPT Duy Tân, Quảng Nam – nơi nuôi dưỡng tình yêu di sản và trách nhiệm với môi trường.</p>
+          <div class="social-row">
+            <a class="social-btn" href="#" title="Facebook">📘</a>
+            <a class="social-btn" href="#" title="Instagram">📸</a>
+            <a class="social-btn" href="#" title="YouTube">▶️</a>
+            <a class="social-btn" href="#" title="Email">✉️</a>
+          </div>
+          <div class="footer-slogan">"Tuổi trẻ Duy Tân – Chung tay vì một Việt Nam xanh"</div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Chuyên mục</h4>
+          <a href="#di-san" onclick="document.getElementById('di-san').scrollIntoView({behavior:'smooth'});return false">🏛️ Di sản quê em</a>
+          <a href="#moi-truong" onclick="document.getElementById('moi-truong').scrollIntoView({behavior:'smooth'});return false">🌿 Môi trường xanh</a>
+          <a href="#bai-viet" onclick="document.getElementById('bai-viet').scrollIntoView({behavior:'smooth'});return false">✏️ Bài viết học sinh</a>
+          <a href="#thu-vien" onclick="document.getElementById('thu-vien').scrollIntoView({behavior:'smooth'});return false">📸 Thư viện ảnh</a>
+          <a href="#kien-thuc" onclick="document.getElementById('kien-thuc').scrollIntoView({behavior:'smooth'});return false">💡 Góc kiến thức</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hoạt động</h4>
+          <a href="#hoat-dong" onclick="document.getElementById('hoat-dong').scrollIntoView({behavior:'smooth'});return false">📅 Sự kiện sắp tới</a>
+          <a href="#" onclick="APP.showPage('ranking');return false">🏆 Bảng xếp hạng xanh</a>
+          <a href="#" onclick="APP.openPostModal();return false">✏️ Đăng bài viết</a>
+          <a href="#" onclick="APP.openRegisterModal();return false">🌱 Đăng ký tài khoản</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Liên hệ</h4>
+          <a href="#">📍 Duy Xuyên, Quảng Nam</a>
+          <a href="mailto:tuoitreduitan@edu.vn">✉️ tuoitreduitan@edu.vn</a>
+          <a href="#">📞 0235 xxx xxxx</a>
+          <a href="#">🌐 duitan.edu.vn</a>
+          <a href="#" onclick="APP.openRegisterModal();return false" style="margin-top:8px;display:inline-block;padding:8px 18px;background:var(--green);color:#fff;border-radius:24px;font-size:13px;font-weight:600">Tham gia cộng đồng →</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2025 Tuổi Trẻ Duy Tân – Thiết kế bởi Đoàn trường THPT Duy Tân, Quảng Nam</div>
+        <div>Giữ gìn di sản – Bảo vệ môi trường 🌿</div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- end #home-content -->
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════ -->
+<script src="js/db.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+<script>
+  // ── Category filter on home posts grid ──────────────
+  function filterHome(btn, cat) {
+    document.querySelectorAll('.cat-tab').forEach(b => {
+      b.classList.remove('btn-primary');
+      b.classList.add('btn-outline');
+    });
+    btn.classList.add('btn-primary');
+    btn.classList.remove('btn-outline');
+
+    const grid = document.getElementById('posts-grid');
+    const posts = DB.getPostsByCategory(cat).slice(0, 6);
+    grid.innerHTML = posts.length
+      ? posts.map((p, i) => UI.postCardHTML(p, DB.getUserById(p.authorId), i)).join('')
+      : '<div style="grid-column:1/-1;text-align:center;padding:60px;color:#bbb"><div style="font-size:48px">📭</div><p style="margin-top:12px">Chưa có bài viết nào trong chuyên mục này</p></div>';
+  }
+
+  // ── Scroll-spy for anchor nav links ─────────────────
+  document.querySelectorAll('#main-nav a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+      document.getElementById('main-nav').classList.remove('open');
+    });
+  });
+
+  // ── Close dropdown when clicking outside ────────────
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.header-user')) {
+      document.getElementById('user-dropdown')?.classList.remove('open');
+    }
+  });
+</script>
+</body>
+</html>
